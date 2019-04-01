@@ -23,9 +23,9 @@ class CurrencyController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        fromTextField.becomeFirstResponder()
+       // fromTextField.becomeFirstResponder()
         setNotificationKeyboardChange()
-        
+    
         //update rate if last_update Date < 24H
         if Rate.needUpdate() {
             updateRate()
