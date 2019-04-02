@@ -44,7 +44,7 @@ class Rate: NSManagedObject {
         let context = AppDelegate.viewContext
         let request: NSFetchRequest<Rate> = Rate.fetchRequest()
         request.predicate = NSPredicate(format: "symbol = %@", symbol)
-        request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true)]
+        request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
         if let rates = try? context.fetch(request), let rate = rates.first  {
             return rate
         }
@@ -56,7 +56,7 @@ class Rate: NSManagedObject {
     static func getLastUpdateDate() -> Date? {
         let context = AppDelegate.viewContext
         let request: NSFetchRequest<Rate> = Rate.fetchRequest()
-        request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true)]
+        request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
         if let rates = try? context.fetch(request), let rate = rates.first  {
             return rate.date
         }

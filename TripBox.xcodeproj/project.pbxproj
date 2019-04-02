@@ -21,6 +21,8 @@
 		1A554C4E2252904400EB8512 /* DecimalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A554C4D2252904400EB8512 /* DecimalButton.swift */; };
 		1A554C502252904E00EB8512 /* DecimalButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A554C4F2252904E00EB8512 /* DecimalButton.xib */; };
 		1A554C522252916300EB8512 /* IBInspectableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A554C512252916300EB8512 /* IBInspectableExtension.swift */; };
+		1A6084692252BF3F00BC674F /* NSNumber+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6084682252BF3F00BC674F /* NSNumber+Extension.swift */; };
+		1A62C4E6225399F00056A6A3 /* CurrencySelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A62C4E5225399F00056A6A3 /* CurrencySelectorViewController.swift */; };
 		1ADAD634225224C0009CD9A3 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADAD633225224C0009CD9A3 /* Symbol.swift */; };
 		1ADAD63622522B71009CD9A3 /* CurrencyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADAD63522522B71009CD9A3 /* CurrencyController.swift */; };
 		1AFC3B47225037E7004BA8B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFC3B46225037E7004BA8B8 /* AppDelegate.swift */; };
@@ -64,6 +66,8 @@
 		1A554C4D2252904400EB8512 /* DecimalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalButton.swift; sourceTree = "<group>"; };
 		1A554C4F2252904E00EB8512 /* DecimalButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DecimalButton.xib; sourceTree = "<group>"; };
 		1A554C512252916300EB8512 /* IBInspectableExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBInspectableExtension.swift; sourceTree = "<group>"; };
+		1A6084682252BF3F00BC674F /* NSNumber+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNumber+Extension.swift"; sourceTree = "<group>"; };
+		1A62C4E5225399F00056A6A3 /* CurrencySelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySelectorViewController.swift; sourceTree = "<group>"; };
 		1ADAD633225224C0009CD9A3 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		1ADAD63522522B71009CD9A3 /* CurrencyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyController.swift; sourceTree = "<group>"; };
 		1AFC3B43225037E7004BA8B8 /* TripBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,6 +184,7 @@
 				1A4C281F22510D70006E5A3A /* UIView+InstanceNib.swift */,
 				1A1913BE22523C6F000E7F87 /* Date+Extension.swift */,
 				1A554C472252617C00EB8512 /* String+Extension.swift */,
+				1A6084682252BF3F00BC674F /* NSNumber+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -196,10 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				1ADAD63522522B71009CD9A3 /* CurrencyController.swift */,
-				1A554C49225286BF00EB8512 /* DecimalKeyboard.swift */,
-				1A554C4B225286C800EB8512 /* DecimalKeyboard.xib */,
-				1A554C4D2252904400EB8512 /* DecimalButton.swift */,
-				1A554C4F2252904E00EB8512 /* DecimalButton.xib */,
+				1A62C4E5225399F00056A6A3 /* CurrencySelectorViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -207,8 +209,20 @@
 		1A4C282422510D70006E5A3A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1A60846A2252BFEB00BC674F /* CurrencyConverter */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		1A60846A2252BFEB00BC674F /* CurrencyConverter */ = {
+			isa = PBXGroup;
+			children = (
+				1A554C49225286BF00EB8512 /* DecimalKeyboard.swift */,
+				1A554C4B225286C800EB8512 /* DecimalKeyboard.xib */,
+				1A554C4D2252904400EB8512 /* DecimalButton.swift */,
+				1A554C4F2252904E00EB8512 /* DecimalButton.xib */,
+			);
+			path = CurrencyConverter;
 			sourceTree = "<group>";
 		};
 		1AFC3B3A225037E7004BA8B8 = {
@@ -494,6 +508,7 @@
 			files = (
 				1A4C282722510D70006E5A3A /* UIView+InstanceNib.swift in Sources */,
 				1A554C522252916300EB8512 /* IBInspectableExtension.swift in Sources */,
+				1A6084692252BF3F00BC674F /* NSNumber+Extension.swift in Sources */,
 				1A554C482252617C00EB8512 /* String+Extension.swift in Sources */,
 				1A4C282822510D70006E5A3A /* Network.swift in Sources */,
 				1A4C282522510D70006E5A3A /* NetworkManager.swift in Sources */,
@@ -501,6 +516,7 @@
 				1AFC3B47225037E7004BA8B8 /* AppDelegate.swift in Sources */,
 				1A1913BF22523C6F000E7F87 /* Date+Extension.swift in Sources */,
 				1A554C4E2252904400EB8512 /* DecimalButton.swift in Sources */,
+				1A62C4E6225399F00056A6A3 /* CurrencySelectorViewController.swift in Sources */,
 				1ADAD63622522B71009CD9A3 /* CurrencyController.swift in Sources */,
 				1A554C4A225286BF00EB8512 /* DecimalKeyboard.swift in Sources */,
 				1ADAD634225224C0009CD9A3 /* Symbol.swift in Sources */,

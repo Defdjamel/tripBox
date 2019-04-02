@@ -31,6 +31,7 @@ class Symbol: NSManagedObject {
     
     static var all: [Symbol] {
         let request: NSFetchRequest<Symbol> = Symbol.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         guard let items = try? AppDelegate.viewContext.fetch(request) else { return [] }
         return items
     }
