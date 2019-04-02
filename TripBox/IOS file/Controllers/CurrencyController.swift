@@ -9,11 +9,13 @@
 import UIKit
 
 class CurrencyController: UIViewController {
-    private var currencyFrom : Rate! //default Local
-    private var currencyTo : Rate! // default USD
+    private var currencyFrom : Rate?//default Local
+    private var currencyTo : Rate? // default USD
+    private  var currencyInChangeIsFrom = false //flag indicated currency will be change
     
     @IBOutlet weak var fromTextField: UITextField!
     @IBOutlet weak var toTextField: UITextField!
+    @IBOutlet weak var lastUpdateLabel: UILabel!
     
     @IBOutlet weak var fromBtn: UIButton!
     @IBOutlet weak var toBtn: UIButton!
@@ -22,26 +24,19 @@ class CurrencyController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-       // fromTextField.becomeFirstResponder()
-        setNotificationKeyboardChange()
-    
         //update rate if last_update Date < 24H
         if Rate.needUpdate() {
             updateRate()
             updateSymbols()
-        }else {
-            setDefaultCurrency()
-            convert()
-            updateUI()
         }
+         self.setDefaultCurrency()
     }
     
-
     // default currency
     private func setDefaultCurrency(){
         setLocalRate()
         setUSDRate()
+        updateUI()
         
     }
     private func setLocalRate(){
@@ -57,18 +52,50 @@ class CurrencyController: UIViewController {
             self.currencyTo = rate
         }
     }
+    //MARK: - Action
+    @IBAction func onClickFromBtn(_ sender: Any) {
+        currencyInChangeIsFrom = true
+        self.performSegue(withIdentifier: "currency_selector", sender: self)
+    }
+    
+    @IBAction func onClickToBtn(_ sender: Any) {
+        currencyInChangeIsFrom = false
+         self.performSegue(withIdentifier: "currency_selector", sender: self)
+    }
+    
+    //MARK: - UI
+    
+    private func updateUI(){
+        updateBtnCurrency()
+        updateLastUpdateLabel()
+    }
+    
+    private func updateBtnCurrency(){
+        guard let currencyTo = currencyTo, let currencyFrom = currencyFrom else{
+            return
+        }
+        toBtn.setTitle(currencyTo.symbol, for: .normal)
+        fromBtn.setTitle(currencyFrom.symbol, for: .normal)
+    }
+    private func updateLastUpdateLabel(){
+        if let currencyTo = currencyTo, let currencyDate = currencyTo.date  {
+            let df = DateFormatter()
+            df.dateStyle = .medium
+            df.timeStyle = .medium
+            lastUpdateLabel.text = "Last updated at : " + df.string(from: currencyDate)
+        }
+    }
     
     //MARK: - Data
-    
-    
+   
     /** request new Rate
      and add to coreData
      */
-    private func updateRate(){
+    private func updateRate (){
         NetworkManager.sharedInstance.getRates({
             
         }) {
-            
+        
         }
     }
     
@@ -85,57 +112,58 @@ class CurrencyController: UIViewController {
             
         }
     }
-
-     //MARK: - UI
-    
-    private func updateUI(){
-        updateBtnCurrency()
-    }
-    
-    private func updateBtnCurrency(){
-        toBtn.setTitle(currencyTo.symbol, for: .normal)
-        fromBtn.setTitle(currencyFrom.symbol, for: .normal)
-        
-    }
-
-    private func convert(){
-        let fromVal = fromTextField.text!.textToDouble()
-        
+    //MARK: - Converter
+    private func convert(fromVal: Double, fromRate: Rate,toRate: Rate) -> Double{
+        guard let currencyTo = currencyTo else{
+            return 0
+        }
         //convert to base (EUR)
-        let baseVal = fromVal / currencyFrom.value
+        let baseVal = fromVal / fromRate.value
         
         //convert from base (EUR) to new Currency
         let finalVal =  baseVal * currencyTo.value
-        toTextField.text = self.getFormattedCurrency(value: NSNumber.init(value: finalVal))
+        return finalVal
     }
-    /*
+    
+    private func updateConvert(_ fromValText : String){
+        guard let currencyTo = currencyTo , let currencyFrom = currencyFrom else{
+            return 
+        }
+        let fromVal =  fromValText.textToDouble()
+        let newVal = convert(fromVal: fromVal, fromRate: currencyFrom, toRate: currencyTo)
+        self.toTextField.text = NSNumber(value: newVal).getFormattedCurrency()
+    }
+   
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if let vc = segue.destination as? CurrencySelectorViewController {
+            vc.delegate = self
+        }
     }
-    */
-     func getFormattedCurrency(value: NSNumber) -> String {
-       
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.locale = NSLocale.current // This is the default
-        return  formatter.string(from: value)!
-    }
-
 }
 
-
-
- // MARK: - UITextFieldDelegate
-extension CurrencyController: UITextFieldDelegate {
-    private func setNotificationKeyboardChange(){
-       fromTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+// MARK: - DecimalKeyboardDelegate
+extension CurrencyController : DecimalKeyboardDelegate {
+    func decimalKeyboardDidChange(text: String) {
+        //updateUI
+        self.fromTextField.text = text
+       updateConvert(text)
     }
-    @objc func textFieldDidChange(textFiedl : UITextField){
-        convert()
+}
+
+// MARK: - currencySelectorDelegate
+extension CurrencyController : currencySelectorDelegate {
+    func currencySelectorDelegate_didSelect(rate: Rate) {
+        if currencyInChangeIsFrom {
+             currencyFrom = rate
+        }else{
+            currencyTo = rate
+        }
+        updateUI()
+        updateConvert(self.fromTextField.text!)
     }
-    
 }
