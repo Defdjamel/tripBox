@@ -14,6 +14,7 @@
 		1A4C15D52254B79B00D20774 /* TranslatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C15D42254B79B00D20774 /* TranslatorViewController.swift */; };
 		1A4C15D72254BB7100D20774 /* Lang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C15D62254BB7100D20774 /* Lang.swift */; };
 		1A4C15DA225506A000D20774 /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C15D9225506A000D20774 /* ViewController+Extension.swift */; };
+		1A4C15DC2255083200D20774 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C15DB2255083200D20774 /* Loader.swift */; };
 		1A4C282522510D70006E5A3A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C281B22510D70006E5A3A /* NetworkManager.swift */; };
 		1A4C282622510D70006E5A3A /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C281E22510D70006E5A3A /* NSObject+Extension.swift */; };
 		1A4C282722510D70006E5A3A /* UIView+InstanceNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C281F22510D70006E5A3A /* UIView+InstanceNib.swift */; };
@@ -62,6 +63,7 @@
 		1A4C15D42254B79B00D20774 /* TranslatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorViewController.swift; sourceTree = "<group>"; };
 		1A4C15D62254BB7100D20774 /* Lang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lang.swift; sourceTree = "<group>"; };
 		1A4C15D9225506A000D20774 /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
+		1A4C15DB2255083200D20774 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		1A4C281B22510D70006E5A3A /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		1A4C281E22510D70006E5A3A /* NSObject+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		1A4C281F22510D70006E5A3A /* UIView+InstanceNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+InstanceNib.swift"; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				1A60846A2252BFEB00BC674F /* CurrencyConverter */,
+				1A4C15DB2255083200D20774 /* Loader.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				1A4C15DA225506A000D20774 /* ViewController+Extension.swift in Sources */,
 				1A554C4E2252904400EB8512 /* DecimalButton.swift in Sources */,
 				1A62C4E6225399F00056A6A3 /* CurrencySelectorViewController.swift in Sources */,
+				1A4C15DC2255083200D20774 /* Loader.swift in Sources */,
 				1ADAD63622522B71009CD9A3 /* CurrencyController.swift in Sources */,
 				1A554C4A225286BF00EB8512 /* DecimalKeyboard.swift in Sources */,
 				1ADAD634225224C0009CD9A3 /* Symbol.swift in Sources */,

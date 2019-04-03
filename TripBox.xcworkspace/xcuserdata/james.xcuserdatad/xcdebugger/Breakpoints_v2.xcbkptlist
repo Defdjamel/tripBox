@@ -41,24 +41,8 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TripBox/Controllers/Translator/TranslatorViewController.swift"
-            timestampString = "575997504.802447"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "convertText()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "TripBox/Network/NetworkManager.swift"
-            timestampString = "575997504.8025711"
+            timestampString = "576000249.83544"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "132"
@@ -74,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TripBox/Network/NetworkManager.swift"
-            timestampString = "575997504.802626"
+            timestampString = "576000249.835511"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "131"
@@ -90,7 +74,7 @@
                   moduleName = "TripBox"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/james/Google%20Drive/OpenClassRoom/Beta%20Testeur/P_9/TripBox/TripBox/Network/NetworkManager.swift"
-                  timestampString = "575995887.33286"
+                  timestampString = "576000249.962804"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "131"
@@ -105,7 +89,7 @@
                   moduleName = "TripBox"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/james/Google%20Drive/OpenClassRoom/Beta%20Testeur/P_9/TripBox/TripBox/Network/NetworkManager.swift"
-                  timestampString = "575995887.33462"
+                  timestampString = "576000249.965417"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "132"

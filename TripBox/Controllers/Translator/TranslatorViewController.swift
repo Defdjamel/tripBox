@@ -39,10 +39,14 @@ class TranslatorViewController: UIViewController {
         guard let langFrom = langFrom?.language , let langTo =  langTo?.language , let text = inputTextView.text else{
             return
         }
+        ANLoader.showLoading()
         NetworkManager.sharedInstance.getTranslation(text, langFrom, langTo, { (responseText) in
             self.outputLabel.text = responseText
+            ANLoader.hide()
         }) {
+            ANLoader.hide()
             self.showErrorMessage("Error during requesting translation!", completionValid: nil)
+            
         }
         
     }
