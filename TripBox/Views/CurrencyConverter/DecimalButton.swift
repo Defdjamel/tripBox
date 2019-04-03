@@ -17,7 +17,7 @@ class DecimalButton: UIView {
         // Drawing code
         layoutIfNeeded()
         self.button.cornerRadius = self.button.frame.width / 2
-        self.button.layer.shadowColor = UIColor.blue.cgColor
+        self.button.layer.shadowColor = UIColor.black.cgColor
         self.button.layer.shadowOffset = CGSize(width: 2, height: 2)
         self.button.layer.shadowRadius = 4
         self.button.layer.shadowOpacity = 0.1
