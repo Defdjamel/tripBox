@@ -8,8 +8,8 @@
 
 import UIKit
 
-let fixer_api_key = "dad4ac5d5c79883878b26df0569bbb2b"
-let google_api_key = "AIzaSyChV4pTet6skRJEpCZkt1RX124HlwRUbwo"
+let fixer_api_key = "fixer_api_key"
+let google_api_key = "google_api_key"
 
 struct Api {
     //currency conveter
