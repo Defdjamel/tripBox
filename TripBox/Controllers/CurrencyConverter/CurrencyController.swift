@@ -92,7 +92,9 @@ class CurrencyController: UIViewController {
      and add to coreData
      */
     private func updateRate (){
+        ANLoader.showLoading()
         NetworkManager.sharedInstance.getRates({
+            ANLoader.hide()
             if self.currencyFrom  == nil {
                 self.setDefaultCurrency()
             }
@@ -105,7 +107,6 @@ class CurrencyController: UIViewController {
      and add to coreData
      */
     private func updateSymbols(){
-        Symbol.removeAll()
         NetworkManager.sharedInstance.getSymbols({
             if self.currencyFrom  == nil {
                 self.setDefaultCurrency()

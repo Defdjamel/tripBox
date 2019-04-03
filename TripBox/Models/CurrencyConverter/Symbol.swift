@@ -9,22 +9,43 @@
 import UIKit
 import CoreData
 class Symbol: NSManagedObject {
+    
+    func setSelected(){
+        self.selected_at = Date.init()
+        try? AppDelegate.viewContext.save()
+    }
+    
+    /** this funtion return an existing object if exist else a new.
+     Parameters: symbol
+     */
+    static func getSymbol(_ symb: String) -> Symbol {
+        let context = AppDelegate.viewContext
+        let request: NSFetchRequest<Symbol> = Symbol.fetchRequest()
+        request.predicate = NSPredicate(format: "name == %@ " , symb)
+        if let duplicates = try? context.fetch(request), let item = duplicates.first  {
+            return item
+        }else{
+            let symbol =  Symbol(context: context )
+            symbol.name = symb
+            return symbol
+        }
+    }
    
     static func saveSymbol(_ dict:NSDictionary) -> Symbol{
         let context = AppDelegate.viewContext
-        
-        let symbol = Symbol(context: context)
-        
+       
         //       symbol
-        if let name = dict.object(forKey: "name") as? String {
-            symbol.name = name
+        guard let name = dict.object(forKey: "name") as? String else {
+           return Symbol(context: context)
         }
+        let symbol = self.getSymbol(name)
         
+       
         //       name
         if let detail = dict.object(forKey: "detail") as? String {
             symbol.detail = detail
         }
-
+        
         try? context.save()
         return symbol
     }
@@ -35,11 +56,12 @@ class Symbol: NSManagedObject {
         guard let items = try? AppDelegate.viewContext.fetch(request) else { return [] }
         return items
     }
-    
-    static func removeAll(){
-        let context = AppDelegate.viewContext
-        for item in all {
-            context.delete(item)
-        }
+    static var lastSelected: [Symbol] {
+        let request: NSFetchRequest<Symbol> = Symbol.fetchRequest()
+        request.predicate = NSPredicate(format: "selected_at != null ")
+        request.sortDescriptors = [NSSortDescriptor(key: "selected_at", ascending: false)]
+        guard let items = try? AppDelegate.viewContext.fetch(request) else { return [] }
+        return Array(items.prefix(5))
     }
+    
 }

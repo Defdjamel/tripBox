@@ -18,6 +18,7 @@ class DecimalKeyboard: UIView {
    @IBOutlet weak var delegate: DecimalKeyboardDelegate?
     var currentText  = ""
     var currentDecimal : Double = 0
+    var isPopulated = false
     
    //MARK: - LifeCycle
     required init?(coder aDecoder: NSCoder) {
@@ -30,13 +31,17 @@ class DecimalKeyboard: UIView {
     }
     override  func awakeFromNib() {
         needsUpdateConstraints()
+        
     }
     
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
         // Drawing code
-        populatedButtons()
+        if !isPopulated {
+            isPopulated  = true
+            populatedButtons()
+        }
     }
     //MARK: - UI
     private func populatedButtons(){
