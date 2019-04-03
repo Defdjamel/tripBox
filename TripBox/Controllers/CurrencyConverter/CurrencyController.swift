@@ -93,9 +93,11 @@ class CurrencyController: UIViewController {
      */
     private func updateRate (){
         NetworkManager.sharedInstance.getRates({
-            
+            if self.currencyFrom  == nil {
+                self.setDefaultCurrency()
+            }
         }) {
-        
+          self.showErrorMessage("Error during requesting rate.", completionValid: nil)
         }
     }
     
@@ -109,7 +111,7 @@ class CurrencyController: UIViewController {
                 self.setDefaultCurrency()
             }
         }) {
-            
+            self.showErrorMessage("Error during request.", completionValid: nil)
         }
     }
     //MARK: - Converter

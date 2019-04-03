@@ -42,7 +42,7 @@ class TranslatorViewController: UIViewController {
         NetworkManager.sharedInstance.getTranslation(text, langFrom, langTo, { (responseText) in
             self.outputLabel.text = responseText
         }) {
-        
+            self.showErrorMessage("Error during requesting translation!", completionValid: nil)
         }
         
     }
@@ -52,7 +52,7 @@ class TranslatorViewController: UIViewController {
         NetworkManager.sharedInstance.getLangs({
             self.setDefaultLangConvert()
         }) {
-            
+            self.showErrorMessage("Error during requesting languages.", completionValid: nil)
         }
     }
     
