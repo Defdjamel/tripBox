@@ -1,3 +1,20 @@
-PODFILE CHECKSUM: 033e744e9b9b53787ffeb6f6f7ac3d23e7f66bad
+PODS:
+  - Kingfisher (4.10.0)
+  - SVProgressHUD (2.2.5)
+
+DEPENDENCIES:
+  - Kingfisher (~> 4.10.0)
+  - SVProgressHUD
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Kingfisher
+    - SVProgressHUD
+
+SPEC CHECKSUMS:
+  Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+
+PODFILE CHECKSUM: 0248c4d4cf54d37a33992c7365e5ecef1355c7da
 
 COCOAPODS: 1.5.3

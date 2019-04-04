@@ -58,5 +58,7 @@
 		<key>NSExceptionAllowsInsecureHTTPLoads</key>
 		<true/>
 	</dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>get weather informations</string>
 </dict>
 </plist>

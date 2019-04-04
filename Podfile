@@ -6,6 +6,8 @@ target 'TripBox' do
   use_frameworks!
 
   # Pods for TripBox
+  pod 'Kingfisher', '~> 4.10.0'
+  pod 'SVProgressHUD'
 
   target 'TripBoxTests' do
     inherit! :search_paths

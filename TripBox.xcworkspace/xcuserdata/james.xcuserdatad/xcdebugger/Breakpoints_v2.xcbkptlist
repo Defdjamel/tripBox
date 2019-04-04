@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TripBox/Network/NetworkManager.swift"
-            timestampString = "576015811.50588"
+            filePath = "TripBox/Models/Weather/Weather.swift"
+            timestampString = "576087104.081614"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "getTranslation(_:_:_:_:_:)"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "saveWeather(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,46 +57,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TripBox/Network/NetworkManager.swift"
-            timestampString = "576015811.506023"
+            filePath = "TripBox/Models/Weather/Weather.swift"
+            timestampString = "576087104.081677"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
-            landmarkName = "getTranslation(_:_:_:_:_:)"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "saveWeather(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TripBox.NetworkManager.getTranslation(Swift.String, Swift.String, Swift.String, (Swift.String) -&gt; (), () -&gt; ()) -&gt; ()"
-                  moduleName = "TripBox"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/james/Google%20Drive/OpenClassRoom/Beta%20Testeur/P_9/TripBox/TripBox/Network/NetworkManager.swift"
-                  timestampString = "576000249.962804"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "131"
-                  endingLineNumber = "131"
-                  offsetFromSymbolStart = "528">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.NSDictionary) -&gt; () in TripBox.NetworkManager.getTranslation(Swift.String, Swift.String, Swift.String, (Swift.String) -&gt; (), () -&gt; ()) -&gt; ()"
-                  moduleName = "TripBox"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/james/Google%20Drive/OpenClassRoom/Beta%20Testeur/P_9/TripBox/TripBox/Network/NetworkManager.swift"
-                  timestampString = "576000249.965417"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "132"
-                  endingLineNumber = "132"
-                  offsetFromSymbolStart = "56">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

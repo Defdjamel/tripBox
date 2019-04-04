@@ -20,6 +20,9 @@
 		1A4C15E3225577A400D20774 /* UITextView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C15E2225577A400D20774 /* UITextView+extension.swift */; };
 		1A4C15E622560D8000D20774 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C15E522560D8000D20774 /* City.swift */; };
 		1A4C15E822560DA400D20774 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C15E722560DA400D20774 /* Weather.swift */; };
+		1A4C15EB22560E6E00D20774 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C15EA22560E6E00D20774 /* WeatherViewController.swift */; };
+		1A4C15ED2256575100D20774 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C15EC2256575100D20774 /* WeatherTableViewCell.swift */; };
+		1A4C15EF22565A2300D20774 /* WeatherInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C15EE22565A2300D20774 /* WeatherInterface.swift */; };
 		1A4C282522510D70006E5A3A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C281B22510D70006E5A3A /* NetworkManager.swift */; };
 		1A4C282622510D70006E5A3A /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C281E22510D70006E5A3A /* NSObject+Extension.swift */; };
 		1A4C282722510D70006E5A3A /* UIView+InstanceNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C281F22510D70006E5A3A /* UIView+InstanceNib.swift */; };
@@ -74,6 +77,9 @@
 		1A4C15E2225577A400D20774 /* UITextView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+extension.swift"; sourceTree = "<group>"; };
 		1A4C15E522560D8000D20774 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		1A4C15E722560DA400D20774 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		1A4C15EA22560E6E00D20774 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		1A4C15EC2256575100D20774 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
+		1A4C15EE22565A2300D20774 /* WeatherInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInterface.swift; sourceTree = "<group>"; };
 		1A4C281B22510D70006E5A3A /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		1A4C281E22510D70006E5A3A /* NSObject+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		1A4C281F22510D70006E5A3A /* UIView+InstanceNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+InstanceNib.swift"; sourceTree = "<group>"; };
@@ -186,6 +192,15 @@
 			children = (
 				1A4C15E522560D8000D20774 /* City.swift */,
 				1A4C15E722560DA400D20774 /* Weather.swift */,
+				1A4C15EE22565A2300D20774 /* WeatherInterface.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		1A4C15E922560E5900D20774 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				1A4C15EA22560E6E00D20774 /* WeatherViewController.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -201,6 +216,7 @@
 		1A4C281922510D70006E5A3A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				1A4C15EC2256575100D20774 /* WeatherTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -249,6 +265,7 @@
 		1A4C282322510D70006E5A3A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1A4C15E922560E5900D20774 /* Weather */,
 				1A4C15D32254B76400D20774 /* Translator */,
 				1A4C15D22254B70F00D20774 /* CurrencyConverter */,
 			);
@@ -371,6 +388,7 @@
 				1AFC3B3F225037E7004BA8B8 /* Sources */,
 				1AFC3B40225037E7004BA8B8 /* Frameworks */,
 				1AFC3B41225037E7004BA8B8 /* Resources */,
+				9DF42C6287DCF5C14B0A73DA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -537,6 +555,30 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9DF42C6287DCF5C14B0A73DA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TripBox/Pods-TripBox-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TripBox/Pods-TripBox-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B6FAF11BE262C432528753E4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -582,13 +624,16 @@
 				1A4C15E12255775900D20774 /* Device.swift in Sources */,
 				1A554C4E2252904400EB8512 /* DecimalButton.swift in Sources */,
 				1A62C4E6225399F00056A6A3 /* CurrencySelectorViewController.swift in Sources */,
+				1A4C15EB22560E6E00D20774 /* WeatherViewController.swift in Sources */,
 				1A4C15E822560DA400D20774 /* Weather.swift in Sources */,
 				1A4C15DC2255083200D20774 /* Loader.swift in Sources */,
 				1ADAD63622522B71009CD9A3 /* CurrencyController.swift in Sources */,
+				1A4C15EF22565A2300D20774 /* WeatherInterface.swift in Sources */,
 				1A554C4A225286BF00EB8512 /* DecimalKeyboard.swift in Sources */,
 				1ADAD634225224C0009CD9A3 /* Symbol.swift in Sources */,
 				1A4C15E3225577A400D20774 /* UITextView+extension.swift in Sources */,
 				1A399D502251284600E0366E /* Rate.swift in Sources */,
+				1A4C15ED2256575100D20774 /* WeatherTableViewCell.swift in Sources */,
 				1A4C282622510D70006E5A3A /* NSObject+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
