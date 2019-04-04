@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		13B5920A7F762B7055AEAB20 /* Pods_TripBoxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F2F2C60727A3E4F7D5F5CC /* Pods_TripBoxTests.framework */; };
 		1A1913BF22523C6F000E7F87 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1913BE22523C6F000E7F87 /* Date+Extension.swift */; };
+		1A3024C922566E49003760EB /* WeatherCitySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3024C822566E49003760EB /* WeatherCitySearchViewController.swift */; };
 		1A399D4D225127AD00E0366E /* tripBox.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A399D4B225127AD00E0366E /* tripBox.xcdatamodeld */; };
 		1A399D502251284600E0366E /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A399D4F2251284600E0366E /* Rate.swift */; };
 		1A4C15D52254B79B00D20774 /* TranslatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C15D42254B79B00D20774 /* TranslatorViewController.swift */; };
@@ -66,6 +67,7 @@
 
 /* Begin PBXFileReference section */
 		1A1913BE22523C6F000E7F87 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		1A3024C822566E49003760EB /* WeatherCitySearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCitySearchViewController.swift; sourceTree = "<group>"; };
 		1A399D4C225127AD00E0366E /* tripBox.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = tripBox.xcdatamodel; sourceTree = "<group>"; };
 		1A399D4F2251284600E0366E /* Rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
 		1A4C15D42254B79B00D20774 /* TranslatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorViewController.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				1A4C15EA22560E6E00D20774 /* WeatherViewController.swift */,
+				1A3024C822566E49003760EB /* WeatherCitySearchViewController.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -614,6 +617,7 @@
 				1A554C482252617C00EB8512 /* String+Extension.swift in Sources */,
 				1A4C15E622560D8000D20774 /* City.swift in Sources */,
 				1A4C282822510D70006E5A3A /* Network.swift in Sources */,
+				1A3024C922566E49003760EB /* WeatherCitySearchViewController.swift in Sources */,
 				1A4C15D72254BB7100D20774 /* Lang.swift in Sources */,
 				1A4C282522510D70006E5A3A /* NetworkManager.swift in Sources */,
 				1A399D4D225127AD00E0366E /* tripBox.xcdatamodeld in Sources */,

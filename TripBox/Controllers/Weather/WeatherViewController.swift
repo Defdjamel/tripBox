@@ -19,20 +19,34 @@ class WeatherViewController: UIViewController {
         // Do any additional setup after loading the view.
         
        getCurrentLocation()
-       updateWeathers()
+       updateViewData()
+       requesAllWeathers()
     }
-   
+    //MARK: -  Action
+    @IBAction func onClickEdit(_ sender: Any) {
+        self.tableView.isEditing = !self.tableView.isEditing
+    }
+    
     //MARK: -  Data
-    private func updateWeathers(){
+    private func updateViewData(){
         weathers = Weather.all
         self.tableView.reloadData()
+    }
+    
+     private func requesAllWeathers(){
+      
+        for item in Weather.all {
+            if let id  = item.id_city {
+                self.getWeatherForIdCity(id)
+            }
+        }
     }
     
     //MARK: - Request Data
     private func getWeatherForLocation(_ location : CLLocation){
         NetworkManager.sharedInstance.getWeather(nil, location, {weather in
             weather.setCurrentPosition()
-            self.updateWeathers()
+            self.updateViewData()
             
         }) {
             
@@ -41,32 +55,27 @@ class WeatherViewController: UIViewController {
     
     private func getWeatherForIdCity(_ idCity : NSNumber){
         NetworkManager.sharedInstance.getWeather(idCity, nil, {weather in
-            
-            
+            weather.setCurrentPosition()
+            self.updateViewData()
         }) {
             
         }
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-    }
-    */
-
-    private func startImporting(){
-        DispatchQueue.global(qos: .background).async {
-            // Background thread
-            DispatchQueue.main.async(execute: {
-                ANLoader.showLoading("0.0%", disableUI: true)
-            })
-            self.importCityList()
+        if  let nc = segue.destination as? UINavigationController,
+            let vc = nc.viewControllers.first as? WeatherCitySearchViewController{
+            vc.delegate = self
         }
     }
+    
 
+   
 }
 
 // MARK: - Location
@@ -100,47 +109,18 @@ extension WeatherViewController : CLLocationManagerDelegate{
     }
     
 }
-extension WeatherViewController {
-    private func importCityList(){
-        //check if already imported
-        
-        //get local Json file
-     
-        if let path = Bundle.main.path(forResource: "city.list", ofType: "json") {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-                if let jsonResult = jsonResult as? Array<NSDictionary>  {
-                    // do stuff
-                    print("start importing \(jsonResult.count )")
-                    var i : Float = 0
-                    for city in jsonResult{
-                        City.save(city)
-                          i += 1
-                     
-                        let percent  = String(format: "%.2f", arguments: [i/Float(jsonResult.count) * 100])
-                        DispatchQueue.main.async(execute: {
-                            ANLoader.instance?.textLabel.text = percent + " %"
-                        })
-                       
-                    }
-                    print("finish")
-                    DispatchQueue.main.async(execute: {
-                         ANLoader.hide()
-                    })
-                   
-                }
-            } catch {
-                // handle error
-            }
-        }
+
+
+
+// MARK: - TableView
+extension WeatherViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
     }
+    
 }
-
-
-// MARK: - WeatherViewController
-extension WeatherViewController: UITableViewDataSource , UITableViewDelegate{
+extension WeatherViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -158,9 +138,14 @@ extension WeatherViewController: UITableViewDataSource , UITableViewDelegate{
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+  
+}
+
+extension WeatherViewController : WeatherCitySearchDelegate{
+    func weatherCitySearchDelegate_didSelect(city: City) {
+        if let id = city.id {
+             self.getWeatherForIdCity(id)
+        }
+       
     }
-    
-    
 }

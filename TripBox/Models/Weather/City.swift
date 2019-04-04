@@ -10,15 +10,15 @@ import UIKit
 import CoreData
 
 class City: NSManagedObject {
-
+    
     static func save(_ dict:NSDictionary){
-        let moc = NSManagedObjectContext(concurrencyType:.mainQueueConcurrencyType)
-        let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-        context.parent = moc
-        
-        //let context = AppDelegate.viewContext
-        let object = City(context: context)
-        
+        let moc = AppDelegate.viewContext
+        let privateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        privateContext.parent = moc
+       // privateContext.persistentStoreCoordinator = moc.persistentStoreCoordinator
+     //   let privateContext = AppDelegate.viewContext
+      
+        let object = City(context: privateContext)
         //       id
         if let id = dict.object(forKey: "id") as? NSNumber {
             object.id = id
@@ -43,19 +43,18 @@ class City: NSManagedObject {
                  object.lat = lat
         }
         
-        //try? context.save()
         
-        
-      
-        
-        context.perform({
+        privateContext.performAndWait {
             do {
-                try context.save()
+                try privateContext.save()
+                moc.performAndWait {
+                //  try?  moc.save()
+                }
             } catch {
                 fatalError("Failure to save context: \(error)")
             }
-        })
-        
+    
+         }
         
     }
     
@@ -76,5 +75,13 @@ class City: NSManagedObject {
         for item in all {
             context.delete(item)
         }
+    }
+    static func searchCityByKeyword(_ q :String) -> [City] {
+        let request: NSFetchRequest<City> = City.fetchRequest()
+        request.predicate = NSPredicate(format: "name contains[c] %@",q )
+        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+        request.fetchLimit = 100
+        guard let items = try? AppDelegate.viewContext.fetch(request) else { return [] }
+        return items
     }
 }

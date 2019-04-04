@@ -17,4 +17,10 @@ extension  NSNumber {
         return  formatter.string(from: self)!
     }
 
+    func convertToCelsius () -> NSNumber {
+        return NSNumber(value: self.doubleValue - 273.15)
+    }
+    func convertToFarheneit() -> NSNumber {
+        return NSNumber(value: 1.8 * (self.doubleValue - 273.0 ) + 32 )
+    }
 }

@@ -28,6 +28,7 @@
         <attribute name="humidity" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id_city" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isCelcius" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isCurrentPosition" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name_city" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="temp" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
@@ -38,10 +39,10 @@
         <relationship name="city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="City" inverseName="weathers" inverseEntity="City" syncable="YES"/>
     </entity>
     <elements>
+        <element name="City" positionX="313.7109375" positionY="137.3671875" width="128" height="135"/>
+        <element name="Lang" positionX="100.078125" positionY="-204.74609375" width="128" height="75"/>
         <element name="Rate" positionX="-50.40625" positionY="-201.72265625" width="128" height="105"/>
         <element name="Symbol" positionX="-63" positionY="9" width="128" height="90"/>
-        <element name="Lang" positionX="100.078125" positionY="-204.74609375" width="128" height="75"/>
-        <element name="City" positionX="313.7109375" positionY="137.3671875" width="128" height="133"/>
-        <element name="Weather" positionX="147.13671875" positionY="280.4609375" width="128" height="223"/>
+        <element name="Weather" positionX="147.13671875" positionY="280.4609375" width="128" height="240"/>
     </elements>
 </model>

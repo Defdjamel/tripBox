@@ -88,14 +88,25 @@ class Weather: NSManagedObject {
  */
 extension Weather : WeatherInterface {
     var temperature: String {
-        guard let temp = self.temp else{
+        guard var temp = self.temp else{
             return "_"
         }
-        return String(format: "%1.0f°", temp.floatValue)
+        var unit = "C"
+        if self.isCelcius {
+            temp = temp.convertToCelsius()
+        }else{
+            unit = "F"
+             temp = temp.convertToFarheneit()
+        }
+        
+        return String(format: "%1.0f°%@", temp.floatValue,unit)
     }
     
     var imageUrl: String? {
-        return "https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/widgets/09d.png"
+        guard let icon = self.icon else{
+            return nil
+        }
+        return "https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/widgets/\(icon).png"
     }
     
     var title: String {
