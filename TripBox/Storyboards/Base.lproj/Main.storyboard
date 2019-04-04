@@ -29,7 +29,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                         <state key="normal" title="-">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="onClickFromBtn:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Fgy-om-IhW"/>
@@ -37,7 +37,7 @@
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0.0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YRY-b3-S6m">
                                         <rect key="frame" x="135" y="12" width="271" height="46"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="31"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                         <connections>
@@ -67,7 +67,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                         <state key="normal" title="-">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="onClickToBtn:" destination="9pv-A4-QxB" eventType="touchUpInside" id="7g2-1G-41l"/>
@@ -75,14 +75,14 @@
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0.0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6C1-2A-zIQ">
                                         <rect key="frame" x="135" y="12" width="271" height="46"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="31"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVA-SA-TIL">
                                         <rect key="frame" x="29" y="70" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                        <color key="textColor" red="0.97254902119999997" green="0.97647058959999999" blue="0.98039215800000001" alpha="1" colorSpace="deviceRGB"/>
+                                        <color key="textColor" red="0.42655369639396667" green="0.47584608197212219" blue="0.48026475310325623" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -110,11 +110,11 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency Converter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Upn-o2-dGR">
                                 <rect key="frame" x="130.5" y="52" width="153.5" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.42655369639396667" green="0.47584608197212219" blue="0.48026475310325623" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.39698137442933734" green="0.67721493880893502" blue="0.96533066034317017" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ZGD-oD-HLx" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="2qM-e6-irC"/>
                             <constraint firstItem="Upn-o2-dGR" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="8" id="8yf-a8-9io"/>
@@ -228,11 +228,12 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="tintColor" red="0.62352943419999995" green="0.37254902719999999" blue="0.71372550729999995" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="selectedImageTintColor" red="0.17257410287857056" green="0.21834245324134827" blue="0.44677489995956421" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="xu9-7N-yLk" kind="relationship" relationship="viewControllers" id="yPb-Zm-ySv"/>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="9Pu-fH-cjD" kind="relationship" relationship="viewControllers" id="0je-s2-gqF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -352,11 +353,11 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YDA-wj-I5C">
-                                <rect key="frame" x="10" y="248" width="394" height="16"/>
+                                <rect key="frame" x="10" y="248" width="394" height="45"/>
                                 <subviews>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBv-wS-UHI">
-                                        <rect key="frame" x="8" y="8" width="378" height="0.0"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="24"/>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text translated..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBv-wS-UHI">
+                                        <rect key="frame" x="8" y="8" width="378" height="29"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-MediumItalic" family="Helvetica Neue" pointSize="24"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -387,7 +388,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.97254902119999997" green="0.97647058959999999" blue="0.98039215800000001" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="t9o-gi-iJg" firstAttribute="trailing" secondItem="2D8-7r-YhJ" secondAttribute="trailing" constant="10" id="6GF-5p-VMF"/>
                             <constraint firstItem="Oa1-Xp-FnS" firstAttribute="leading" secondItem="t9o-gi-iJg" secondAttribute="leading" constant="10" id="A4E-t2-Y6s"/>
@@ -420,11 +421,28 @@
             </objects>
             <point key="canvasLocation" x="843.47826086956525" y="195.53571428571428"/>
         </scene>
+        <!--Weather-->
+        <scene sceneID="W5n-DE-Z8I">
+            <objects>
+                <viewController id="9Pu-fH-cjD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2I3-A6-sMc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="mh7-q1-yig"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Weather" image="icon_weather" id="fXK-Ps-hca"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6o8-Fc-l31" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="882" y="879"/>
+        </scene>
     </scenes>
     <resources>
         <image name="icon_close" width="48" height="48"/>
         <image name="icon_currency" width="32" height="32"/>
         <image name="icon_swap" width="64" height="64"/>
         <image name="icon_translate" width="32" height="32"/>
+        <image name="icon_weather" width="32" height="31"/>
     </resources>
 </document>

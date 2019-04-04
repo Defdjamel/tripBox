@@ -13,8 +13,13 @@
 		1A399D502251284600E0366E /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A399D4F2251284600E0366E /* Rate.swift */; };
 		1A4C15D52254B79B00D20774 /* TranslatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C15D42254B79B00D20774 /* TranslatorViewController.swift */; };
 		1A4C15D72254BB7100D20774 /* Lang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C15D62254BB7100D20774 /* Lang.swift */; };
-		1A4C15DA225506A000D20774 /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C15D9225506A000D20774 /* ViewController+Extension.swift */; };
+		1A4C15DA225506A000D20774 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C15D9225506A000D20774 /* UIViewController+Extension.swift */; };
 		1A4C15DC2255083200D20774 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C15DB2255083200D20774 /* Loader.swift */; };
+		1A4C15DE22556F1100D20774 /* city.list.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A4C15DD22556F1000D20774 /* city.list.json */; };
+		1A4C15E12255775900D20774 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C15E02255775900D20774 /* Device.swift */; };
+		1A4C15E3225577A400D20774 /* UITextView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C15E2225577A400D20774 /* UITextView+extension.swift */; };
+		1A4C15E622560D8000D20774 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C15E522560D8000D20774 /* City.swift */; };
+		1A4C15E822560DA400D20774 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C15E722560DA400D20774 /* Weather.swift */; };
 		1A4C282522510D70006E5A3A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C281B22510D70006E5A3A /* NetworkManager.swift */; };
 		1A4C282622510D70006E5A3A /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C281E22510D70006E5A3A /* NSObject+Extension.swift */; };
 		1A4C282722510D70006E5A3A /* UIView+InstanceNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C281F22510D70006E5A3A /* UIView+InstanceNib.swift */; };
@@ -62,8 +67,13 @@
 		1A399D4F2251284600E0366E /* Rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
 		1A4C15D42254B79B00D20774 /* TranslatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorViewController.swift; sourceTree = "<group>"; };
 		1A4C15D62254BB7100D20774 /* Lang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lang.swift; sourceTree = "<group>"; };
-		1A4C15D9225506A000D20774 /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
+		1A4C15D9225506A000D20774 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		1A4C15DB2255083200D20774 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		1A4C15DD22556F1000D20774 /* city.list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.list.json; sourceTree = "<group>"; };
+		1A4C15E02255775900D20774 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		1A4C15E2225577A400D20774 /* UITextView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+extension.swift"; sourceTree = "<group>"; };
+		1A4C15E522560D8000D20774 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		1A4C15E722560DA400D20774 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		1A4C281B22510D70006E5A3A /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		1A4C281E22510D70006E5A3A /* NSObject+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		1A4C281F22510D70006E5A3A /* UIView+InstanceNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+InstanceNib.swift"; sourceTree = "<group>"; };
@@ -163,6 +173,23 @@
 			path = Translator;
 			sourceTree = "<group>";
 		};
+		1A4C15DF2255774800D20774 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				1A4C15E02255775900D20774 /* Device.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		1A4C15E422560D4600D20774 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				1A4C15E522560D8000D20774 /* City.swift */,
+				1A4C15E722560DA400D20774 /* Weather.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
 		1A4C281822510D70006E5A3A /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +216,7 @@
 		1A4C281C22510D70006E5A3A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1A4C15E422560D4600D20774 /* Weather */,
 				1A4C15D82254BB7300D20774 /* Translator */,
 				1A399D4E225127DB00E0366E /* CurrencyConverter */,
 			);
@@ -204,7 +232,8 @@
 				1A1913BE22523C6F000E7F87 /* Date+Extension.swift */,
 				1A554C472252617C00EB8512 /* String+Extension.swift */,
 				1A6084682252BF3F00BC674F /* NSNumber+Extension.swift */,
-				1A4C15D9225506A000D20774 /* ViewController+Extension.swift */,
+				1A4C15D9225506A000D20774 /* UIViewController+Extension.swift */,
+				1A4C15E2225577A400D20774 /* UITextView+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -271,6 +300,7 @@
 		1AFC3B45225037E7004BA8B8 /* TripBox */ = {
 			isa = PBXGroup;
 			children = (
+				1A4C15DF2255774800D20774 /* Helper */,
 				1A4C282022510D70006E5A3A /* Defines */,
 				1A4C281822510D70006E5A3A /* Storyboards */,
 				1A4C281922510D70006E5A3A /* Cells */,
@@ -281,6 +311,7 @@
 				1A4C282422510D70006E5A3A /* Views */,
 				1AFC3B46225037E7004BA8B8 /* AppDelegate.swift */,
 				1A399D4B225127AD00E0366E /* tripBox.xcdatamodeld */,
+				1A4C15DD22556F1000D20774 /* city.list.json */,
 				1AFC3B4F225037E9004BA8B8 /* Assets.xcassets */,
 				1AFC3B51225037E9004BA8B8 /* LaunchScreen.storyboard */,
 				1AFC3B54225037E9004BA8B8 /* Info.plist */,
@@ -441,6 +472,7 @@
 				1AFC3B50225037E9004BA8B8 /* Assets.xcassets in Resources */,
 				1AFC3B4E225037E7004BA8B8 /* Main.storyboard in Resources */,
 				1A554C502252904E00EB8512 /* DecimalButton.xib in Resources */,
+				1A4C15DE22556F1100D20774 /* city.list.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +570,7 @@
 				1A554C522252916300EB8512 /* IBInspectableExtension.swift in Sources */,
 				1A6084692252BF3F00BC674F /* NSNumber+Extension.swift in Sources */,
 				1A554C482252617C00EB8512 /* String+Extension.swift in Sources */,
+				1A4C15E622560D8000D20774 /* City.swift in Sources */,
 				1A4C282822510D70006E5A3A /* Network.swift in Sources */,
 				1A4C15D72254BB7100D20774 /* Lang.swift in Sources */,
 				1A4C282522510D70006E5A3A /* NetworkManager.swift in Sources */,
@@ -545,13 +578,16 @@
 				1AFC3B47225037E7004BA8B8 /* AppDelegate.swift in Sources */,
 				1A1913BF22523C6F000E7F87 /* Date+Extension.swift in Sources */,
 				1A4C15D52254B79B00D20774 /* TranslatorViewController.swift in Sources */,
-				1A4C15DA225506A000D20774 /* ViewController+Extension.swift in Sources */,
+				1A4C15DA225506A000D20774 /* UIViewController+Extension.swift in Sources */,
+				1A4C15E12255775900D20774 /* Device.swift in Sources */,
 				1A554C4E2252904400EB8512 /* DecimalButton.swift in Sources */,
 				1A62C4E6225399F00056A6A3 /* CurrencySelectorViewController.swift in Sources */,
+				1A4C15E822560DA400D20774 /* Weather.swift in Sources */,
 				1A4C15DC2255083200D20774 /* Loader.swift in Sources */,
 				1ADAD63622522B71009CD9A3 /* CurrencyController.swift in Sources */,
 				1A554C4A225286BF00EB8512 /* DecimalKeyboard.swift in Sources */,
 				1ADAD634225224C0009CD9A3 /* Symbol.swift in Sources */,
+				1A4C15E3225577A400D20774 /* UITextView+extension.swift in Sources */,
 				1A399D502251284600E0366E /* Rate.swift in Sources */,
 				1A4C282622510D70006E5A3A /* NSObject+Extension.swift in Sources */,
 			);

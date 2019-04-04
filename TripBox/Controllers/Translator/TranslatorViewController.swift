@@ -64,7 +64,7 @@ class TranslatorViewController: UIViewController {
      set to init lang convert local to english
      */
     private func setDefaultLangConvert(){
-        let from = self.getDeviceLangcode()
+        let from = Device.getDeviceLangcode()
         let to = "en"
         if let lang = Lang.getLangWithSymbol(from) {
             langFrom = lang
@@ -109,31 +109,16 @@ class TranslatorViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+  
     
-    private func autoSizeTextView(_ textView: UITextView) -> CGSize{
-        let newSize = textView.sizeThatFits(CGSize(width: textView.frame.width, height: CGFloat.greatestFiniteMagnitude))
-        return newSize
-        
-    }
-    
-    private func getDeviceLangcode() -> String{
-        let defaultLang = "en"
-        guard let lang =  Locale.preferredLanguages.first else{
-            return defaultLang
-        }
-       let languageDic =  NSLocale.components(fromLocaleIdentifier: lang)
-        guard let langCode =  languageDic["kCFLocaleLanguageCodeKey"]   else {
-            return defaultLang
-        }
-        return langCode
-    }
+   
 
 }
 // MARK: - UITextViewDelegate
 extension TranslatorViewController: UITextViewDelegate {
     public func textViewDidChange(_ textView: UITextView){
 //        Update size TextView
-       InputTextHeight.constant = min( self.autoSizeTextView(textView).height, 220)
+       InputTextHeight.constant = min( textView.getAutoSizeTextView().height, 220)
         
 //        Show/hide placeHolder
         placeHolderLabel.isHidden = !textView.text.isEmpty
