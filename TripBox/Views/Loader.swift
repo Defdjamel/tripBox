@@ -70,7 +70,7 @@ public struct ANLoader {
     
     //MARK: - Main Loading View creating here
     public class LoadingResource: UIView {
-        fileprivate var textLabel: UILabel!
+         var textLabel: UILabel!
         fileprivate var activityView: UIActivityIndicatorView!
         fileprivate var disableUIIntraction = false
         
@@ -230,8 +230,9 @@ fileprivate extension ANLoader{
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             
             guard ANLoader.instance == nil else {
-                print("\n ==============================* ANLoader *=====================================")
-                print("Error: Loadering already active now, please stop that before creating a new one.")
+                //print("\n ==============================* ANLoader *=====================================")
+               // print("Error: Loadering already active now, please stop that before creating a new one.")
+                ANLoader.instance?.textLabel.text = text
                 return
             }
             

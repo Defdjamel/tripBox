@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreLocation
+
 enum  httpMethod : String{
      case post = "POST"
      case get = "GET"
@@ -27,9 +29,10 @@ extension NetworkManager {
         var request = URLRequest(url: URL(string:url)!)
         request.httpMethod = method.rawValue
        
-        //add parameters
+        //add parameters for post
         let data = try! JSONSerialization.data(withJSONObject: parameters, options: [])
         request.httpBody = data
+        //add parameters for get
         
          //add parameters header
         if request.value(forHTTPHeaderField: "Content-Type") == nil {
@@ -137,6 +140,26 @@ extension NetworkManager {
             else{
                 failed()
             }
+        }) {
+            failed()
+        }
+    }
+    
+     //MARK: - WEATHERS
+    func getWeather(_ idCity : NSNumber?,_ location: CLLocation?, _ success: @escaping (Weather) -> Void, _ failed: @escaping () -> Void) {
+          var url = Api.getWeather
+        if let location = location {
+            url.append("&lat=\(location.coordinate.latitude)")
+             url.append("&lon=\(location.coordinate.longitude)")
+        }
+        if let idCity = idCity {
+              url.append("&id=\(idCity.int64Value)")
+        }
+    
+        dataRequest(httpMethod.post , url,[:], success: { (responseDict) in
+                let weather = Weather.saveWeather(responseDict)
+                success(weather)
+            
         }) {
             failed()
         }
