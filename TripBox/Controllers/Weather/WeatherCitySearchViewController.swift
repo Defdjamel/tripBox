@@ -24,9 +24,7 @@ class WeatherCitySearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-        
         //import jsonFile to CoreData
         if City.all.count ==  0{
             startImporting()
@@ -36,7 +34,6 @@ class WeatherCitySearchViewController: UIViewController {
     @IBAction func onClickBack(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
     // MARK: - Data
     private func startImporting(){
         City.removeAll()
@@ -51,17 +48,6 @@ class WeatherCitySearchViewController: UIViewController {
             })
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 // MARK: - searchDelegate
@@ -71,7 +57,6 @@ extension WeatherCitySearchViewController : UISearchBarDelegate {
               cities =  City.searchCityByKeyword(q)
             self.tableView.reloadData()
         }
-      
     }
     public func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
         searchBar.resignFirstResponder()
@@ -86,7 +71,6 @@ extension WeatherCitySearchViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.delegate?.weatherCitySearchDelegate_didSelect(city: cities[indexPath.row])
         self.dismiss(animated: true, completion: nil)
-        
     }
 }
 // MARK: - UITableViewDataSource
@@ -95,7 +79,6 @@ extension WeatherCitySearchViewController: UITableViewDataSource{
         return cities.count
         
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier",
                                                  for: indexPath)
@@ -110,15 +93,13 @@ extension WeatherCitySearchViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
-    
 }
-
+//MARK: - Data importing
 extension WeatherCitySearchViewController {
+    /** get array of cities from JsonFile
+     */
     private func importCityList(_ success : @escaping(Array<NSDictionary> ) -> Void){
-        //check if already imported
-        
         //get local Json file
-        
         if let path = Bundle.main.path(forResource: "city.list", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
@@ -127,19 +108,18 @@ extension WeatherCitySearchViewController {
                     // do stuff
                     print("start importing \(jsonResult.count )")
                     success(jsonResult)
-                   
                 }
             } catch {
                 // handle error
             }
         }
-        
     }
-    
+    /** Save array in CoreData in background queu
+     */
     private func saveCities(_ jsonResult : Array<NSDictionary>){
-        var i : Int = 0
-        for city in jsonResult{
-             i += 1
+        
+        for i in 0..<jsonResult.count{
+           let city = jsonResult[i]
             City.save(city)
             //update screen every 0.5%
             if  i % (jsonResult.count / 200) == 0 {
@@ -149,14 +129,14 @@ extension WeatherCitySearchViewController {
                     SVProgressHUD.showProgress(progress, status:"import database\r\n" + percent + "%")
                 })
             }
-            
         }
         DispatchQueue.main.async(execute: {
             SVProgressHUD.dismiss()
             try? AppDelegate.viewContext.save()
         })
-        
-        
     }
-    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        print("memory warning !!!")
+    }
 }

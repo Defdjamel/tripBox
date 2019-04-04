@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TripBox/Models/Weather/City.swift"
-            timestampString = "576107456.679919"
+            timestampString = "576110509.739817"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "all"
             landmarkType = "24">
          </BreakpointContent>

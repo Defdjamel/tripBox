@@ -47,9 +47,7 @@ class City: NSManagedObject {
         privateContext.performAndWait {
             do {
                 try privateContext.save()
-                moc.performAndWait {
-                //  try?  moc.save()
-                }
+               
             } catch {
                 fatalError("Failure to save context: \(error)")
             }
