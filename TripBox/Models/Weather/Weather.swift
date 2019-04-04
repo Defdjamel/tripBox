@@ -15,6 +15,11 @@ class Weather: NSManagedObject {
         self.isCurrentPosition = true
         try? AppDelegate.viewContext.save()
     }
+    func remove(){
+        let context = AppDelegate.viewContext
+        context.delete(self)
+        try? context.save()
+    }
     
 
     /** this funtion return an existing object if exist else a new.
@@ -79,6 +84,7 @@ class Weather: NSManagedObject {
         guard let items = try? AppDelegate.viewContext.fetch(request) else { return [] }
         return items
     }
+    
     
     
 }

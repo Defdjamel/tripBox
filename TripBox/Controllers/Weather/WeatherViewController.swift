@@ -116,8 +116,17 @@ extension WeatherViewController : CLLocationManagerDelegate{
 extension WeatherViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
-    }
+    
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            self.weathers[indexPath.row].remove()
+            self.weathers.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+     }
+    
     
 }
 extension WeatherViewController: UITableViewDataSource {

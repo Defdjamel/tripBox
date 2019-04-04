@@ -15,7 +15,6 @@
 		1A4C15D52254B79B00D20774 /* TranslatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C15D42254B79B00D20774 /* TranslatorViewController.swift */; };
 		1A4C15D72254BB7100D20774 /* Lang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C15D62254BB7100D20774 /* Lang.swift */; };
 		1A4C15DA225506A000D20774 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C15D9225506A000D20774 /* UIViewController+Extension.swift */; };
-		1A4C15DC2255083200D20774 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C15DB2255083200D20774 /* Loader.swift */; };
 		1A4C15DE22556F1100D20774 /* city.list.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A4C15DD22556F1000D20774 /* city.list.json */; };
 		1A4C15E12255775900D20774 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C15E02255775900D20774 /* Device.swift */; };
 		1A4C15E3225577A400D20774 /* UITextView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C15E2225577A400D20774 /* UITextView+extension.swift */; };
@@ -73,7 +72,6 @@
 		1A4C15D42254B79B00D20774 /* TranslatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorViewController.swift; sourceTree = "<group>"; };
 		1A4C15D62254BB7100D20774 /* Lang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lang.swift; sourceTree = "<group>"; };
 		1A4C15D9225506A000D20774 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		1A4C15DB2255083200D20774 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		1A4C15DD22556F1000D20774 /* city.list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.list.json; sourceTree = "<group>"; };
 		1A4C15E02255775900D20774 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		1A4C15E2225577A400D20774 /* UITextView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+extension.swift"; sourceTree = "<group>"; };
@@ -279,7 +277,6 @@
 			isa = PBXGroup;
 			children = (
 				1A60846A2252BFEB00BC674F /* CurrencyConverter */,
-				1A4C15DB2255083200D20774 /* Loader.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -630,7 +627,6 @@
 				1A62C4E6225399F00056A6A3 /* CurrencySelectorViewController.swift in Sources */,
 				1A4C15EB22560E6E00D20774 /* WeatherViewController.swift in Sources */,
 				1A4C15E822560DA400D20774 /* Weather.swift in Sources */,
-				1A4C15DC2255083200D20774 /* Loader.swift in Sources */,
 				1ADAD63622522B71009CD9A3 /* CurrencyController.swift in Sources */,
 				1A4C15EF22565A2300D20774 /* WeatherInterface.swift in Sources */,
 				1A554C4A225286BF00EB8512 /* DecimalKeyboard.swift in Sources */,

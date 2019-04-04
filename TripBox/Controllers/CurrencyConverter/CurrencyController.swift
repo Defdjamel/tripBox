@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 class CurrencyController: UIViewController {
     private var currencyFrom : Rate?//default Local
     private var currencyTo : Rate? // default USD
@@ -92,9 +92,9 @@ class CurrencyController: UIViewController {
      and add to coreData
      */
     private func updateRate (){
-        ANLoader.showLoading()
+        SVProgressHUD.show()
         NetworkManager.sharedInstance.getRates({
-            ANLoader.hide()
+            SVProgressHUD.dismiss()
             if self.currencyFrom  == nil {
                 self.setDefaultCurrency()
             }

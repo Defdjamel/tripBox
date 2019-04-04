@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 class TranslatorViewController: UIViewController {
     var langFrom : Lang?
     var langTo : Lang?
@@ -39,12 +39,12 @@ class TranslatorViewController: UIViewController {
         guard let langFrom = langFrom?.language , let langTo =  langTo?.language , let text = inputTextView.text else{
             return
         }
-        ANLoader.showLoading()
+        SVProgressHUD.show()
         NetworkManager.sharedInstance.getTranslation(text, langFrom, langTo, { (responseText) in
             self.outputLabel.text = responseText
-            ANLoader.hide()
+            SVProgressHUD.dismiss()
         }) {
-            ANLoader.hide()
+            SVProgressHUD.dismiss()
             self.showErrorMessage("Error during requesting translation!", completionValid: nil)
             
         }

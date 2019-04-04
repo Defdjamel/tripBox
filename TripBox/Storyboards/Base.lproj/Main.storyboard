@@ -620,7 +620,7 @@
                         <viewLayoutGuide key="safeArea" id="A8s-mL-4cO"/>
                     </view>
                     <navigationItem key="navigationItem" id="PiE-yN-Tgj">
-                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="cancel" id="wyy-en-dqe">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wyy-en-dqe">
                             <color key="tintColor" red="0.0" green="0.44705882670000002" blue="1" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
                                 <action selector="onClickBack:" destination="faT-22-7iZ" id="xNy-MU-Uvh"/>
