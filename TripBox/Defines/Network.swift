@@ -22,6 +22,6 @@ struct Api {
     static let getLanguages = "https://translation.googleapis.com/language/translate/v2/languages?key=" + google_api_key
     
 //   weather
-     static let getWeather = " https://api.openweathermap.org/data/2.5/weather?appid=" + open_weather_api_key
+     static let getWeather = "https://api.openweathermap.org/data/2.5/weather?appid=" + open_weather_api_key
    
 }
