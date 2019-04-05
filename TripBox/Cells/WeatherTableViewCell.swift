@@ -15,6 +15,7 @@ class WeatherTableViewCell: UITableViewCell {
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var weatherImage: UIImageView!
+    @IBOutlet weak var iconCurrentLocation: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -44,6 +45,8 @@ class WeatherTableViewCell: UITableViewCell {
         else{
             self.weatherImage.image = nil
         }
+        
+        self.iconCurrentLocation.isHidden = !object.currentLocation
     }
 
 }

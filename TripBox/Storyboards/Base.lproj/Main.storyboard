@@ -231,9 +231,9 @@
                         <color key="selectedImageTintColor" red="0.17257410287857056" green="0.21834245324134827" blue="0.44677489995956421" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="xu9-7N-yLk" kind="relationship" relationship="viewControllers" id="yPb-Zm-ySv"/>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="Y9n-l5-VEJ" kind="relationship" relationship="viewControllers" id="0je-s2-gqF"/>
+                        <segue destination="xu9-7N-yLk" kind="relationship" relationship="viewControllers" id="yPb-Zm-ySv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -479,9 +479,19 @@
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_location" translatesAutoresizingMaskIntoConstraints="NO" id="EJY-Jt-KdD">
+                                                            <rect key="frame" x="354" y="4" width="20" height="20"/>
+                                                            <color key="tintColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="1Ex-K0-0jN"/>
+                                                                <constraint firstAttribute="width" constant="20" id="FbT-aA-Ls6"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
+                                                        <constraint firstItem="EJY-Jt-KdD" firstAttribute="top" secondItem="kif-an-KpH" secondAttribute="top" constant="4" id="08a-Z3-c0M"/>
+                                                        <constraint firstAttribute="trailing" secondItem="EJY-Jt-KdD" secondAttribute="trailing" constant="4" id="3sJ-Zb-M2q"/>
                                                         <constraint firstItem="UKZ-fe-0pn" firstAttribute="centerY" secondItem="kif-an-KpH" secondAttribute="centerY" id="6qF-BN-XTg"/>
                                                         <constraint firstItem="iYh-Oi-yi3" firstAttribute="top" secondItem="KZq-E2-YuI" secondAttribute="bottom" constant="8" id="7t4-u8-PGs"/>
                                                         <constraint firstItem="KZq-E2-YuI" firstAttribute="top" secondItem="kif-an-KpH" secondAttribute="top" constant="20" id="8bk-WI-8tb"/>
@@ -511,6 +521,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="iconCurrentLocation" destination="EJY-Jt-KdD" id="fas-YE-ECe"/>
                                             <outlet property="nameLabel" destination="KZq-E2-YuI" id="RUX-61-zIv"/>
                                             <outlet property="subtitleLabel" destination="iYh-Oi-yi3" id="P2S-50-BH1"/>
                                             <outlet property="tempLabel" destination="nvx-vu-jhk" id="2Y1-R6-Tqy"/>
@@ -690,6 +701,7 @@
     <resources>
         <image name="icon_close" width="48" height="48"/>
         <image name="icon_currency" width="32" height="32"/>
+        <image name="icon_location" width="48" height="48"/>
         <image name="icon_swap" width="64" height="64"/>
         <image name="icon_translate" width="32" height="32"/>
         <image name="icon_weather" width="32" height="31"/>

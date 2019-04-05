@@ -17,5 +17,6 @@ protocol WeatherInterface {
     var subtitle: String { get }
     var temperature: String { get }
     var imageUrl: String? { get }
+     var currentLocation: Bool { get }
     
 }

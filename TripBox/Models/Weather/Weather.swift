@@ -11,8 +11,8 @@ import CoreData
 
 class Weather: NSManagedObject {
     
-    func setCurrentPosition(){
-        self.isCurrentPosition = true
+    func setCurrentPosition(_ value : Bool){
+        self.isCurrentPosition = value
         try? AppDelegate.viewContext.save()
     }
     func remove(){
@@ -20,6 +20,9 @@ class Weather: NSManagedObject {
         context.delete(self)
         try? context.save()
     }
+    
+    
+    
     
 
     /** this funtion return an existing object if exist else a new.
@@ -38,7 +41,8 @@ class Weather: NSManagedObject {
             return object
         }
     }
-    
+    /** Add or update a weather
+     */
     static func saveWeather(_ dict:NSDictionary) -> Weather{
         let context = AppDelegate.viewContext
         
@@ -77,12 +81,32 @@ class Weather: NSManagedObject {
         try? context.save()
         return weather
     }
-    
+    /** get All Weathers
+     */
     static var all: [Weather] {
         let request: NSFetchRequest<Weather> = Weather.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "created_at", ascending: true)]
         guard let items = try? AppDelegate.viewContext.fetch(request) else { return [] }
         return items
+    }
+    /** get Weather item with current position at true
+     (should be one)
+     */
+    static var allCurrentPosition : [Weather]{
+        let request: NSFetchRequest<Weather> = Weather.fetchRequest()
+        request.predicate = NSPredicate(format: "isCurrentPosition =  true"  )
+        guard let items = try? AppDelegate.viewContext.fetch(request) else { return [] }
+        return items
+    }
+    /** remove all weather in current position
+     */
+    static func removeAllWeatherCurrentPosition(){
+        let context = AppDelegate.viewContext
+        for item in allCurrentPosition {
+            context.delete(item)
+        }
+        try? context.save()
+        
     }
     
     
@@ -127,6 +151,9 @@ extension Weather : WeatherInterface {
             return "-"
         }
         return weather
+    }
+    var currentLocation: Bool {
+        return self.isCurrentPosition
     }
 
 }

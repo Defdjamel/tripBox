@@ -28,8 +28,6 @@ class TranslatorViewController: UIViewController {
         }else{
             setDefaultLangConvert()
         }
-       
-       
     }
     
      // MARK: - Data
@@ -46,9 +44,7 @@ class TranslatorViewController: UIViewController {
         }) {
             SVProgressHUD.dismiss()
             self.showErrorMessage("Error during requesting translation!", completionValid: nil)
-            
         }
-        
     }
     /** update langs available from API
      */
@@ -74,8 +70,7 @@ class TranslatorViewController: UIViewController {
         }
         updateBtnLang()
     }
-    
-   
+ 
    // MARK: - UI
     private func updateBtnLang(){
         guard let langFrom = langFrom , let langTo =  langTo else{
@@ -84,17 +79,13 @@ class TranslatorViewController: UIViewController {
         btnLangTo.setTitle(langTo.language, for: .normal)
         btnLangFrom.setTitle(langFrom.language, for: .normal)
     }
-    
     // MARK: - Action
     @IBAction func onClickBtnSwap(_ sender: Any) {
         //swap Lang object
         swap(&langFrom, &langTo)
         //swap textvalut
         swap(&inputTextView.text, &outputLabel.text)
-        
         updateBtnLang()
-        
-        
     }
     @IBAction func onClickBtnLangFrom(_ sender: Any) {
     }
@@ -109,10 +100,6 @@ class TranslatorViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-  
-    
-   
-
 }
 // MARK: - UITextViewDelegate
 extension TranslatorViewController: UITextViewDelegate {
@@ -133,5 +120,4 @@ extension TranslatorViewController: UITextViewDelegate {
         }
         return true
     }
-    
 }

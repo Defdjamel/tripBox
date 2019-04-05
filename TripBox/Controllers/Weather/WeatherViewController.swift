@@ -13,57 +13,80 @@ class WeatherViewController: UIViewController {
      let locationManager = CLLocationManager.init()
 
     @IBOutlet weak var tableView: UITableView!
+    let refreshCtrl = UIRefreshControl.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+       addRefreshControl()
        getCurrentLocation()
        updateViewData()
        requesAllWeathers()
     }
+    //MARK: UI
+    private func addRefreshControl(){
+        
+        refreshCtrl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        refreshCtrl.tintColor = UIColor.lightGray
+        self.tableView.refreshControl = refreshCtrl
+    }
+    
     //MARK: -  Action
     @IBAction func onClickEdit(_ sender: Any) {
         self.tableView.isEditing = !self.tableView.isEditing
     }
-    
+    @objc func refreshData(){
+        requesAllWeathers()
+    }
     //MARK: -  Data
     private func updateViewData(){
         weathers = Weather.all
         self.tableView.reloadData()
     }
     
-     private func requesAllWeathers(){
-      
+    //MARK: - Request Data
+    /** requets Data for weather with location
+     should be the current location
+     */
+    private func getWeatherForLocation(_ location : CLLocation){
+        NetworkManager.sharedInstance.getWeather(nil, location, {weather in
+            weather.setCurrentPosition(false)
+            Weather.removeAllWeatherCurrentPosition()
+            weather.setCurrentPosition(true)
+            
+            self.updateViewData()
+        }) {
+            
+        }
+    }
+    /** requets Data for weather with Id city
+     */
+    private func getWeatherForIdCity(_ idCity : NSNumber, success : @escaping() -> Void){
+        NetworkManager.sharedInstance.getWeather(idCity, nil, {weather in
+            self.updateViewData()
+            success()
+        }) {
+            
+        }
+    }
+    
+    /** requets Data for all weather in screen
+     */
+    private func requesAllWeathers(){
+        var requestDone = 0
         for item in Weather.all {
-            if let id  = item.id_city {
-                self.getWeatherForIdCity(id)
+            guard let id  = item.id_city else {
+                return
+            }
+            self.getWeatherForIdCity(id) {
+                requestDone += 1
+                if requestDone == Weather.all.count {
+                    self.refreshCtrl.endRefreshing()
+                }
             }
         }
     }
-    
-    //MARK: - Request Data
-    private func getWeatherForLocation(_ location : CLLocation){
-        NetworkManager.sharedInstance.getWeather(nil, location, {weather in
-            weather.setCurrentPosition()
-            self.updateViewData()
-            
-        }) {
-            
-        }
-    }
-    
-    private func getWeatherForIdCity(_ idCity : NSNumber){
-        NetworkManager.sharedInstance.getWeather(idCity, nil, {weather in
-            weather.setCurrentPosition()
-            self.updateViewData()
-        }) {
-            
-        }
-    }
-    
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
@@ -73,9 +96,6 @@ class WeatherViewController: UIViewController {
             vc.delegate = self
         }
     }
-    
-
-   
 }
 
 // MARK: - Location
@@ -90,7 +110,6 @@ extension WeatherViewController : CLLocationManagerDelegate{
             //locationManager.desiredAccuracy = kCLLocationAccuracy
             locationManager.startUpdatingLocation()
         }
-        
     }
     // MARK: - CLLocationManagerDelegate
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
@@ -100,18 +119,12 @@ extension WeatherViewController : CLLocationManagerDelegate{
         if let location = locations.first {
              self.getWeatherForLocation(location)
         }
-       
-        
     }
     
     public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error){
         print(error.localizedDescription)
     }
-    
 }
-
-
-
 // MARK: - TableView
 extension WeatherViewController: UITableViewDelegate {
     
@@ -126,8 +139,6 @@ extension WeatherViewController: UITableViewDelegate {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
      }
-    
-    
 }
 extension WeatherViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -141,20 +152,16 @@ extension WeatherViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell",
                                                  for: indexPath) as! WeatherTableViewCell
         
-        
        cell.setInterface(weathers[indexPath.row])
         
         return cell
     }
-    
-  
 }
-
 extension WeatherViewController : WeatherCitySearchDelegate{
     func weatherCitySearchDelegate_didSelect(city: City) {
         if let id = city.id {
-             self.getWeatherForIdCity(id)
+            self.getWeatherForIdCity(id) {
+            }
         }
-       
     }
 }

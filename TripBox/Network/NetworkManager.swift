@@ -87,7 +87,6 @@ extension NetworkManager {
                 let timeStamp = responseDict.object(forKey: "timestamp") as? Double,
                 let base = responseDict.object(forKey: "base") as? String{
                 for rate in rates {
-                    print(rate)
                    _ = Rate.saveRate(["value": rate.value, "symbol" : rate.key, "timestamp" : timeStamp, "base" : base])
                 }
                 success()
@@ -102,7 +101,6 @@ extension NetworkManager {
         dataRequest(httpMethod.post , Api.getSymbols,[:], success: { (responseDict) in
             if let responseDict = responseDict.object(forKey: "symbols") as? NSDictionary {
                 for rateSymb in responseDict {
-                    print(rateSymb)
                     _ = Symbol.saveSymbol(["name": rateSymb.key, "detail" : rateSymb.value])
                     
                 }

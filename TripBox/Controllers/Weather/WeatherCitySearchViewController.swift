@@ -117,7 +117,6 @@ extension WeatherCitySearchViewController {
     /** Save array in CoreData in background queu
      */
     private func saveCities(_ jsonResult : Array<NSDictionary>){
-        
         for i in 0..<jsonResult.count{
            let city = jsonResult[i]
             City.save(city)
