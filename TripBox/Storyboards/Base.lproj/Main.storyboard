@@ -131,7 +131,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Money Exhange" image="icon_currency" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Money Exchange" image="icon_currency" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="fromBtn" destination="9Ln-2H-15D" id="EYk-Om-029"/>
                         <outlet property="fromTextField" destination="YRY-b3-S6m" id="rZz-zo-Oui"/>

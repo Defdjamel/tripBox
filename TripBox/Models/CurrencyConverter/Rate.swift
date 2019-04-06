@@ -74,4 +74,16 @@ class Rate: NSManagedObject {
         }
         return false
     }
+    
+    /** Calcul Converter
+    */
+   static func convert(fromVal: Double, fromRate: Rate,toRate: Rate) -> Double{
+        //convert to base (EUR)
+        let baseVal = fromVal / fromRate.value
+        
+        //convert from base (EUR) to new Currency
+        let finalVal =  baseVal * toRate.value
+        return finalVal
+    }
+    
 }

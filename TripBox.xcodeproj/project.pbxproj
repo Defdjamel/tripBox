@@ -42,20 +42,11 @@
 		1AFC3B50225037E9004BA8B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AFC3B4F225037E9004BA8B8 /* Assets.xcassets */; };
 		1AFC3B53225037E9004BA8B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AFC3B51225037E9004BA8B8 /* LaunchScreen.storyboard */; };
 		1AFC3B5E225037EA004BA8B8 /* TripBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFC3B5D225037EA004BA8B8 /* TripBoxTests.swift */; };
-		1AFC3B69225037EA004BA8B8 /* TripBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFC3B68225037EA004BA8B8 /* TripBoxUITests.swift */; };
-		9F588917EB8BC1575178D98B /* Pods_TripBoxUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD66ADF01D0D195A97848964 /* Pods_TripBoxUITests.framework */; };
 		D034D0873A9D05290D9AD0EA /* Pods_TripBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A0C14ECEB676FFB6430F37 /* Pods_TripBox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		1AFC3B5A225037EA004BA8B8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AFC3B3B225037E7004BA8B8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1AFC3B42225037E7004BA8B8;
-			remoteInfo = TripBox;
-		};
-		1AFC3B65225037EA004BA8B8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1AFC3B3B225037E7004BA8B8 /* Project object */;
 			proxyType = 1;
@@ -103,9 +94,6 @@
 		1AFC3B59225037EA004BA8B8 /* TripBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AFC3B5D225037EA004BA8B8 /* TripBoxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripBoxTests.swift; sourceTree = "<group>"; };
 		1AFC3B5F225037EA004BA8B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1AFC3B64225037EA004BA8B8 /* TripBoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripBoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1AFC3B68225037EA004BA8B8 /* TripBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripBoxUITests.swift; sourceTree = "<group>"; };
-		1AFC3B6A225037EA004BA8B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F0E84B2D56AE0EC398AC0F4 /* Pods-TripBoxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripBoxTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TripBoxTests/Pods-TripBoxTests.release.xcconfig"; sourceTree = "<group>"; };
 		27F2F2C60727A3E4F7D5F5CC /* Pods_TripBoxTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripBoxTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D4DC3721E3C193569D3CDEB /* Pods-TripBoxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripBoxUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TripBoxUITests/Pods-TripBoxUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,14 +119,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B5920A7F762B7055AEAB20 /* Pods_TripBoxTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1AFC3B61225037EA004BA8B8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9F588917EB8BC1575178D98B /* Pods_TripBoxUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +277,6 @@
 			children = (
 				1AFC3B45225037E7004BA8B8 /* TripBox */,
 				1AFC3B5C225037EA004BA8B8 /* TripBoxTests */,
-				1AFC3B67225037EA004BA8B8 /* TripBoxUITests */,
 				1AFC3B44225037E7004BA8B8 /* Products */,
 				9F34847F0C565DDF40DA6DFD /* Pods */,
 				1C594F3381E234A361550D1F /* Frameworks */,
@@ -309,7 +288,6 @@
 			children = (
 				1AFC3B43225037E7004BA8B8 /* TripBox.app */,
 				1AFC3B59225037EA004BA8B8 /* TripBoxTests.xctest */,
-				1AFC3B64225037EA004BA8B8 /* TripBoxUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -343,15 +321,6 @@
 				1AFC3B5F225037EA004BA8B8 /* Info.plist */,
 			);
 			path = TripBoxTests;
-			sourceTree = "<group>";
-		};
-		1AFC3B67225037EA004BA8B8 /* TripBoxUITests */ = {
-			isa = PBXGroup;
-			children = (
-				1AFC3B68225037EA004BA8B8 /* TripBoxUITests.swift */,
-				1AFC3B6A225037EA004BA8B8 /* Info.plist */,
-			);
-			path = TripBoxUITests;
 			sourceTree = "<group>";
 		};
 		1C594F3381E234A361550D1F /* Frameworks */ = {
@@ -418,25 +387,6 @@
 			productReference = 1AFC3B59225037EA004BA8B8 /* TripBoxTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		1AFC3B63225037EA004BA8B8 /* TripBoxUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1AFC3B73225037EA004BA8B8 /* Build configuration list for PBXNativeTarget "TripBoxUITests" */;
-			buildPhases = (
-				5A0F58B299A6A05F70AC0B81 /* [CP] Check Pods Manifest.lock */,
-				1AFC3B60225037EA004BA8B8 /* Sources */,
-				1AFC3B61225037EA004BA8B8 /* Frameworks */,
-				1AFC3B62225037EA004BA8B8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1AFC3B66225037EA004BA8B8 /* PBXTargetDependency */,
-			);
-			name = TripBoxUITests;
-			productName = TripBoxUITests;
-			productReference = 1AFC3B64225037EA004BA8B8 /* TripBoxUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -451,10 +401,6 @@
 						CreatedOnToolsVersion = 10.1;
 					};
 					1AFC3B58225037EA004BA8B8 = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = 1AFC3B42225037E7004BA8B8;
-					};
-					1AFC3B63225037EA004BA8B8 = {
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = 1AFC3B42225037E7004BA8B8;
 					};
@@ -475,7 +421,6 @@
 			targets = (
 				1AFC3B42225037E7004BA8B8 /* TripBox */,
 				1AFC3B58225037EA004BA8B8 /* TripBoxTests */,
-				1AFC3B63225037EA004BA8B8 /* TripBoxUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -501,13 +446,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1AFC3B62225037EA004BA8B8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -527,28 +465,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-TripBoxTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5A0F58B299A6A05F70AC0B81 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TripBoxUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -646,14 +562,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1AFC3B60225037EA004BA8B8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1AFC3B69225037EA004BA8B8 /* TripBoxUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -661,11 +569,6 @@
 			isa = PBXTargetDependency;
 			target = 1AFC3B42225037E7004BA8B8 /* TripBox */;
 			targetProxy = 1AFC3B5A225037EA004BA8B8 /* PBXContainerItemProxy */;
-		};
-		1AFC3B66225037EA004BA8B8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1AFC3B42225037E7004BA8B8 /* TripBox */;
-			targetProxy = 1AFC3B65225037EA004BA8B8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -887,48 +790,6 @@
 			};
 			name = Release;
 		};
-		1AFC3B74225037EA004BA8B8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D31ACBFB8E7DE2ACD6E2455 /* Pods-TripBoxUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 39UPL288JM;
-				INFOPLIST_FILE = TripBoxUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.intergoldex.TripBoxUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TripBox;
-			};
-			name = Debug;
-		};
-		1AFC3B75225037EA004BA8B8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D4DC3721E3C193569D3CDEB /* Pods-TripBoxUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 39UPL288JM;
-				INFOPLIST_FILE = TripBoxUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.intergoldex.TripBoxUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TripBox;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -955,15 +816,6 @@
 			buildConfigurations = (
 				1AFC3B71225037EA004BA8B8 /* Debug */,
 				1AFC3B72225037EA004BA8B8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1AFC3B73225037EA004BA8B8 /* Build configuration list for PBXNativeTarget "TripBoxUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1AFC3B74225037EA004BA8B8 /* Debug */,
-				1AFC3B75225037EA004BA8B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

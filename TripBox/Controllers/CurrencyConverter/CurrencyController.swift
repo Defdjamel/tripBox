@@ -117,14 +117,11 @@ class CurrencyController: UIViewController {
     }
     //MARK: - Converter
     private func convert(fromVal: Double, fromRate: Rate,toRate: Rate) -> Double{
-        guard let currencyTo = currencyTo else{
-            return 0
-        }
         //convert to base (EUR)
         let baseVal = fromVal / fromRate.value
         
         //convert from base (EUR) to new Currency
-        let finalVal =  baseVal * currencyTo.value
+        let finalVal =  baseVal * toRate.value
         return finalVal
     }
     

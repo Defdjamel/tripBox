@@ -88,8 +88,10 @@ class TranslatorViewController: UIViewController {
         updateBtnLang()
     }
     @IBAction func onClickBtnLangFrom(_ sender: Any) {
+        //TODO BONUS SELECT LANG
     }
     @IBAction func onClickBtnLangTo(_ sender: Any) {
+        //TODO BONUS SELECT LANG
     }
     /*
     // MARK: - Navigation
