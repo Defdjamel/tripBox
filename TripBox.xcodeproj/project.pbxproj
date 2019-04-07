@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		13B5920A7F762B7055AEAB20 /* Pods_TripBoxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F2F2C60727A3E4F7D5F5CC /* Pods_TripBoxTests.framework */; };
 		1A1913BF22523C6F000E7F87 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1913BE22523C6F000E7F87 /* Date+Extension.swift */; };
+		1A1D7114225A42A3001F1F58 /* TranslatorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1D7113225A42A3001F1F58 /* TranslatorTableViewController.swift */; };
 		1A3024C922566E49003760EB /* WeatherCitySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3024C822566E49003760EB /* WeatherCitySearchViewController.swift */; };
 		1A399D4D225127AD00E0366E /* tripBox.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A399D4B225127AD00E0366E /* tripBox.xcdatamodeld */; };
 		1A399D502251284600E0366E /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A399D4F2251284600E0366E /* Rate.swift */; };
-		1A4C15D52254B79B00D20774 /* TranslatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C15D42254B79B00D20774 /* TranslatorViewController.swift */; };
 		1A4C15D72254BB7100D20774 /* Lang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C15D62254BB7100D20774 /* Lang.swift */; };
 		1A4C15DA225506A000D20774 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4C15D9225506A000D20774 /* UIViewController+Extension.swift */; };
 		1A4C15DE22556F1100D20774 /* city.list.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A4C15DD22556F1000D20774 /* city.list.json */; };
@@ -57,10 +57,10 @@
 
 /* Begin PBXFileReference section */
 		1A1913BE22523C6F000E7F87 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		1A1D7113225A42A3001F1F58 /* TranslatorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorTableViewController.swift; sourceTree = "<group>"; };
 		1A3024C822566E49003760EB /* WeatherCitySearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCitySearchViewController.swift; sourceTree = "<group>"; };
 		1A399D4C225127AD00E0366E /* tripBox.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = tripBox.xcdatamodel; sourceTree = "<group>"; };
 		1A399D4F2251284600E0366E /* Rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
-		1A4C15D42254B79B00D20774 /* TranslatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorViewController.swift; sourceTree = "<group>"; };
 		1A4C15D62254BB7100D20774 /* Lang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lang.swift; sourceTree = "<group>"; };
 		1A4C15D9225506A000D20774 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		1A4C15DD22556F1000D20774 /* city.list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.list.json; sourceTree = "<group>"; };
@@ -146,7 +146,7 @@
 		1A4C15D32254B76400D20774 /* Translator */ = {
 			isa = PBXGroup;
 			children = (
-				1A4C15D42254B79B00D20774 /* TranslatorViewController.swift */,
+				1A1D7113225A42A3001F1F58 /* TranslatorTableViewController.swift */,
 			);
 			path = Translator;
 			sourceTree = "<group>";
@@ -527,6 +527,7 @@
 				1A4C282722510D70006E5A3A /* UIView+InstanceNib.swift in Sources */,
 				1A554C522252916300EB8512 /* IBInspectableExtension.swift in Sources */,
 				1A6084692252BF3F00BC674F /* NSNumber+Extension.swift in Sources */,
+				1A1D7114225A42A3001F1F58 /* TranslatorTableViewController.swift in Sources */,
 				1A554C482252617C00EB8512 /* String+Extension.swift in Sources */,
 				1A4C15E622560D8000D20774 /* City.swift in Sources */,
 				1A4C282822510D70006E5A3A /* Network.swift in Sources */,
@@ -536,7 +537,6 @@
 				1A399D4D225127AD00E0366E /* tripBox.xcdatamodeld in Sources */,
 				1AFC3B47225037E7004BA8B8 /* AppDelegate.swift in Sources */,
 				1A1913BF22523C6F000E7F87 /* Date+Extension.swift in Sources */,
-				1A4C15D52254B79B00D20774 /* TranslatorViewController.swift in Sources */,
 				1A4C15DA225506A000D20774 /* UIViewController+Extension.swift in Sources */,
 				1A4C15E12255775900D20774 /* Device.swift in Sources */,
 				1A554C4E2252904400EB8512 /* DecimalButton.swift in Sources */,

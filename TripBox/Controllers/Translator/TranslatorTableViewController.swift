@@ -1,45 +1,42 @@
 //
-//  TranslatorViewController.swift
+//  TranslatorTableViewController.swift
 //  TripBox
 //
-//  Created by james on 03/04/2019.
+//  Created by james on 07/04/2019.
 //  Copyright © 2019 intergoldex. All rights reserved.
 //
 
 import UIKit
 import SVProgressHUD
-class TranslatorViewController: UIViewController {
+class TranslatorTableViewController: UITableViewController {
     var langFrom : Lang?
     var langTo : Lang?
-
     @IBOutlet weak var btnLangFrom: UIButton!
     @IBOutlet weak var btnLangTo: UIButton!
-    @IBOutlet weak var placeHolderLabel: UILabel!
-    @IBOutlet weak var InputTextHeight: NSLayoutConstraint!
+
     @IBOutlet weak var inputTextView: UITextView!
-    @IBOutlet weak var outputLabel: UILabel!
+    @IBOutlet weak var outPutTextView: UITextView!
+    @IBOutlet weak var placeHolderLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         if Lang.all.count == 0 {
-             updateLangs()
+            updateLangs()
         }else{
             setDefaultLangConvert()
         }
     }
-    
-     // MARK: - Data
+    // MARK: - Data
     /** request to convert text
-    */
+     */
     private func convertText(){
         guard let langFrom = langFrom?.language , let langTo =  langTo?.language , let text = inputTextView.text else{
             return
         }
         SVProgressHUD.show()
         NetworkManager.sharedInstance.getTranslation(text, langFrom, langTo, { (responseText) in
-            self.outputLabel.text = responseText
+            self.outPutTextView.text = responseText
             SVProgressHUD.dismiss()
         }) {
             SVProgressHUD.dismiss()
@@ -70,22 +67,16 @@ class TranslatorViewController: UIViewController {
         }
         updateBtnLang()
     }
- 
-   // MARK: - UI
-    private func updateBtnLang(){
-        guard let langFrom = langFrom , let langTo =  langTo else{
-            return
-        }
-        btnLangTo.setTitle(langTo.language, for: .normal)
-        btnLangFrom.setTitle(langFrom.language, for: .normal)
-    }
+    
+
     // MARK: - Action
     @IBAction func onClickBtnSwap(_ sender: Any) {
         //swap Lang object
         swap(&langFrom, &langTo)
         //swap textvalut
-        swap(&inputTextView.text, &outputLabel.text)
+        swap(&inputTextView.text, &outPutTextView.text)
         updateBtnLang()
+        convertText()
     }
     @IBAction func onClickBtnLangFrom(_ sender: Any) {
         //TODO BONUS SELECT LANG
@@ -93,27 +84,44 @@ class TranslatorViewController: UIViewController {
     @IBAction func onClickBtnLangTo(_ sender: Any) {
         //TODO BONUS SELECT LANG
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    
+    // MARK: - UI
+    private func updateBtnLang(){
+        guard let langFrom = langFrom , let langTo =  langTo else{
+            return
+        }
+        btnLangTo.setTitle(langTo.language, for: .normal)
+        btnLangFrom.setTitle(langFrom.language, for: .normal)
     }
-    */
+
+}
+
+// MARK: - TableViewDataSource
+extension TranslatorTableViewController {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 0:
+            return min(inputTextView.contentSize.height + 16,240)
+        case 1:
+            return 60
+        case 2:
+            return min(outPutTextView.contentSize.height + 16, 240)
+        default:
+            return 0
+        }
+        
+    }
 }
 // MARK: - UITextViewDelegate
-extension TranslatorViewController: UITextViewDelegate {
+extension TranslatorTableViewController: UITextViewDelegate {
     public func textViewDidChange(_ textView: UITextView){
-//        Update size TextView
-       InputTextHeight.constant = min( textView.getAutoSizeTextView().height, 220)
-        
-//        Show/hide placeHolder
         placeHolderLabel.isHidden = !textView.text.isEmpty
+        self.tableView.beginUpdates()
+        self.tableView.endUpdates()
     }
     public func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool{
-//        Avoid return line
+        //        Avoid return line
         if( text == "\n" )
         {
             textView.resignFirstResponder()
