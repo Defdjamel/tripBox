@@ -444,13 +444,13 @@
                                                     <rect key="frame" x="10" y="5" width="378" height="142"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rain" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYh-Oi-yi3">
-                                                            <rect key="frame" x="88" y="57" width="149.5" height="65"/>
+                                                            <rect key="frame" x="88" y="57" width="172" height="65"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="New York, US" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZq-E2-YuI">
-                                                            <rect key="frame" x="88" y="20" width="149.5" height="29"/>
+                                                            <rect key="frame" x="88" y="20" width="172" height="29"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -474,7 +474,7 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="92°C" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nvx-vu-jhk">
-                                                            <rect key="frame" x="247.5" y="46.5" width="122.5" height="49"/>
+                                                            <rect key="frame" x="270" y="46.5" width="100" height="49"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="41"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -487,18 +487,27 @@
                                                                 <constraint firstAttribute="width" constant="20" id="FbT-aA-Ls6"/>
                                                             </constraints>
                                                         </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min 8°, Max" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ifp-2S-YPr">
+                                                            <rect key="frame" x="270" y="95.5" width="100" height="20"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="EJY-Jt-KdD" firstAttribute="top" secondItem="kif-an-KpH" secondAttribute="top" constant="4" id="08a-Z3-c0M"/>
+                                                        <constraint firstItem="Ifp-2S-YPr" firstAttribute="trailing" secondItem="nvx-vu-jhk" secondAttribute="trailing" id="38m-HY-E0p"/>
                                                         <constraint firstAttribute="trailing" secondItem="EJY-Jt-KdD" secondAttribute="trailing" constant="4" id="3sJ-Zb-M2q"/>
                                                         <constraint firstItem="UKZ-fe-0pn" firstAttribute="centerY" secondItem="kif-an-KpH" secondAttribute="centerY" id="6qF-BN-XTg"/>
                                                         <constraint firstItem="iYh-Oi-yi3" firstAttribute="top" secondItem="KZq-E2-YuI" secondAttribute="bottom" constant="8" id="7t4-u8-PGs"/>
                                                         <constraint firstItem="KZq-E2-YuI" firstAttribute="top" secondItem="kif-an-KpH" secondAttribute="top" constant="20" id="8bk-WI-8tb"/>
                                                         <constraint firstItem="iYh-Oi-yi3" firstAttribute="leading" secondItem="UKZ-fe-0pn" secondAttribute="trailing" constant="8" id="9mQ-ZA-fqg"/>
                                                         <constraint firstAttribute="trailing" secondItem="nvx-vu-jhk" secondAttribute="trailing" constant="8" id="Ajb-Wf-0Qa"/>
+                                                        <constraint firstItem="Ifp-2S-YPr" firstAttribute="leading" secondItem="nvx-vu-jhk" secondAttribute="leading" id="LtF-TN-ewn"/>
                                                         <constraint firstItem="nvx-vu-jhk" firstAttribute="leading" secondItem="iYh-Oi-yi3" secondAttribute="trailing" constant="10" id="RRQ-LR-uwt"/>
                                                         <constraint firstItem="UKZ-fe-0pn" firstAttribute="leading" secondItem="kif-an-KpH" secondAttribute="leading" constant="20" id="VT4-RK-aP2"/>
+                                                        <constraint firstItem="Ifp-2S-YPr" firstAttribute="top" secondItem="nvx-vu-jhk" secondAttribute="bottom" id="WUK-yu-RIu"/>
                                                         <constraint firstItem="KZq-E2-YuI" firstAttribute="leading" secondItem="UKZ-fe-0pn" secondAttribute="trailing" constant="8" id="ZAK-FK-KGg"/>
                                                         <constraint firstItem="nvx-vu-jhk" firstAttribute="leading" secondItem="KZq-E2-YuI" secondAttribute="trailing" constant="10" id="fNJ-9N-A6W"/>
                                                         <constraint firstItem="nvx-vu-jhk" firstAttribute="centerY" secondItem="kif-an-KpH" secondAttribute="centerY" id="kAa-II-TiF"/>
@@ -522,6 +531,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="iconCurrentLocation" destination="EJY-Jt-KdD" id="fas-YE-ECe"/>
+                                            <outlet property="minMaxTempLabel" destination="Ifp-2S-YPr" id="afS-Qy-xPb"/>
                                             <outlet property="nameLabel" destination="KZq-E2-YuI" id="RUX-61-zIv"/>
                                             <outlet property="subtitleLabel" destination="iYh-Oi-yi3" id="P2S-50-BH1"/>
                                             <outlet property="tempLabel" destination="nvx-vu-jhk" id="2Y1-R6-Tqy"/>

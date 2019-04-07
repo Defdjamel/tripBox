@@ -63,17 +63,28 @@ class Weather: NSManagedObject {
             weather.temp = temp
         }
         
+        //       temp min
+        if let main = dict.object(forKey: "main") as? NSDictionary,
+            let temp_min =  main.object(forKey: "temp_min") as? NSNumber {
+            weather.temp_min = temp_min
+        }
+        
+        //       temp max
+        if let main = dict.object(forKey: "main") as? NSDictionary,
+            let temp_max =  main.object(forKey: "temp_max") as? NSNumber {
+            weather.temp_max = temp_max
+        }
+        
         //        weather
         if let weathers = dict.object(forKey: "weather") as? NSArray,
             let item =  weathers.firstObject as? NSDictionary,
             let description = item.object(forKey: "description") as? String,
               let icon = item.object(forKey: "icon") as? String
-            
         {
             weather.weather = description
             weather.icon = icon
-        }
         
+        }
         
         //       updated_at
         weather.updated_at = Date()
@@ -126,7 +137,7 @@ extension Weather : WeatherInterface {
             temp = temp.convertToCelsius()
         }else{
             unit = "F"
-             temp = temp.convertToFarheneit()
+            temp = temp.convertToFarheneit()
         }
         
         return String(format: "%1.0f°%@", temp.floatValue,unit)
@@ -150,10 +161,24 @@ extension Weather : WeatherInterface {
         guard let weather =  self.weather else {
             return "-"
         }
-        return weather
+       return weather
     }
     var currentLocation: Bool {
         return self.isCurrentPosition
     }
-
+    var temperatureMinMax: String {
+        guard var tempMin = self.temp_min, var tempMax = self.temp_max else{
+            return ""
+        }
+        var unit = "C"
+        if self.isCelcius {
+            tempMin = tempMin.convertToCelsius()
+            tempMax = tempMax.convertToCelsius()
+        }else{
+            unit = "F"
+            tempMin = tempMin.convertToFarheneit()
+            tempMax = tempMax.convertToFarheneit()
+        }
+      return String(format: "%1.0f - %1.0f °%@", tempMin.floatValue,tempMax.floatValue,unit)
+    }
 }

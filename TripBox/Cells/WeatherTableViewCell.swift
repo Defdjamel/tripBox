@@ -16,6 +16,7 @@ class WeatherTableViewCell: UITableViewCell {
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var weatherImage: UIImageView!
     @IBOutlet weak var iconCurrentLocation: UIImageView!
+    @IBOutlet weak var minMaxTempLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,6 +38,7 @@ class WeatherTableViewCell: UITableViewCell {
         self.nameLabel.text = object.title
         self.subtitleLabel.text = object.subtitle
         self.tempLabel.text = object.temperature
+        self.minMaxTempLabel.text = object.temperatureMinMax
         
         if let imageUrl = object.imageUrl {
             let url = URL(string: imageUrl)

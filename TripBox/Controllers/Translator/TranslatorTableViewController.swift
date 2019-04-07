@@ -38,6 +38,8 @@ class TranslatorTableViewController: UITableViewController {
         NetworkManager.sharedInstance.getTranslation(text, langFrom, langTo, { (responseText) in
             self.outPutTextView.text = responseText
             SVProgressHUD.dismiss()
+            self.tableView.beginUpdates()
+            self.tableView.endUpdates()
         }) {
             SVProgressHUD.dismiss()
             self.showErrorMessage("Error during requesting translation!", completionValid: nil)
